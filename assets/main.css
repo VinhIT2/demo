@@ -1,0 +1,21 @@
+.btn{
+    padding: 12px;
+    text-align: center;
+    width: 100%;
+    border-radius: 6px;
+}
+.btn-success{
+    background-color: #28a745;
+    color: white;
+    border: 1px solid #28a745;
+}
+
+.demo-item{
+    width: 80px;
+    height: 80px;    
+}
+.flex-parent{
+    width: 250px;
+    height: 250px;
+    background-color: #28a745;
+}
