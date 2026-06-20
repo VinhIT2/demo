@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản lý đơn vận chuyển</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="app-shell theme-dark">
+    <header class="app-header">
+      <div class="brand-block">
+        <div class="brand-logo">TLU</div>
+        <div>
+          <h1 class="brand-title">Quản lý đơn vận chuyển</h1>
+          <p class="brand-desc">Theo dõi và xử lý đơn giao hàng</p>
+        </div>
+      </div>
+
+      <nav class="nav-pills">
+        <a class="active" href="#">Đơn hàng</a>
+        <a href="#">Đối tác</a>
+        <a href="#">Theo dõi</a>
+        <a href="#">Báo cáo</a>
+      </nav>
+    </header>
+
+    <section class="stats-grid">
+      <article class="stat-card">
+        <span id="totalCount" class="stat-value">0</span>
+        <span class="stat-label">Tổng đơn</span>
+      </article>
+      <article class="stat-card">
+        <span id="shippingCount" class="stat-value">0</span>
+        <span class="stat-label">Đang giao</span>
+      </article>
+      <article class="stat-card">
+        <span id="doneCount" class="stat-value">0</span>
+        <span class="stat-label">Đã giao</span>
+      </article>
+    </section>
+
+    <main class="main-grid layout-form-right">
+      <section class="panel">
+        <div class="panel-header">
+          <h2 class="panel-title">Danh sách đơn vận chuyển</h2>
+          <p class="panel-desc">Tìm kiếm và lọc theo trạng thái</p>
+        </div>
+
+        <div class="toolbar">
+          <input id="searchInput" class="form-control search-control" type="search" placeholder="Tìm mã đơn, người nhận...">
+          <div class="filter-tabs">
+            <button class="filter-btn active" data-status="Tất cả" type="button">Tất cả</button>
+            <button class="filter-btn" data-status="Chờ lấy" type="button">Chờ lấy</button>
+            <button class="filter-btn" data-status="Đang giao" type="button">Đang giao</button>
+            <button class="filter-btn" data-status="Đã giao" type="button">Đã giao</button>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Mã đơn</th>
+                <th>Người nhận</th>
+                <th>Địa điểm</th>
+                <th>Trạng thái</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2 class="panel-title">Tạo đơn mới</h2>
+          <p class="panel-desc">Nhập thông tin vận chuyển</p>
+        </div>
+
+        <form id="itemForm" class="crud-form">
+          <div class="form-group">
+            <label for="receiverInput">Người nhận</label>
+            <input id="receiverInput" class="form-control" type="text" placeholder="Nhập tên người nhận">
+            <small id="receiverError" class="form-error"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="locationSelect">Địa điểm</label>
+            <select id="locationSelect" class="form-control">
+              <option value="">Chọn địa điểm</option>
+              <option>Hà Nội</option>
+              <option>Đà Nẵng</option>
+              <option>TP.HCM</option>
+              <option>Hải Phòng</option>
+              <option>Cần Thơ</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <span class="field-label">Loại hàng</span>
+            <div class="choice-row">
+              <label><input type="radio" name="type" value="Thường" checked> Thường</label>
+              <label><input type="radio" name="type" value="Nhanh"> Nhanh</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="statusSelect">Trạng thái</label>
+            <select id="statusSelect" class="form-control">
+              <option>Chờ lấy</option>
+              <option>Đang giao</option>
+              <option>Đã giao</option>
+              <option>Đã hủy</option>
+            </select>
+          </div>
+
+          <button class="btn btn-dark btn-block" type="submit">Thêm đơn</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <strong>CSE391</strong>
+      <span>Layout ngang mẫu</span>
+      <span class="student-line">Họ tên SV: __________________ | Mã SV: __________</span>
+    </footer>
+  </div>
+
+  <script src="./data/data.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>

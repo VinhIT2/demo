@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mẫu bảng trái, form phải</title>
+  <link rel="stylesheet" href="../css/exam-crud.css">
+</head>
+<body>
+  <div class="app-shell theme-dark">
+    <header class="app-header">
+      <div class="brand-block">
+        <div class="brand-logo">TLU</div>
+        <div>
+          <h1 class="brand-title">Quản lý đơn vận chuyển</h1>
+          <p class="brand-desc">Theo dõi và xử lý đơn giao hàng</p>
+        </div>
+      </div>
+
+      <nav class="nav-pills">
+        <a class="active" href="#">Đơn hàng</a>
+        <a href="#">Đối tác</a>
+        <a href="#">Báo cáo</a>
+      </nav>
+    </header>
+
+    <section class="stats-grid">
+      <article class="stat-card">
+        <span class="stat-value">5</span>
+        <span class="stat-label">Tổng đơn</span>
+      </article>
+      <article class="stat-card">
+        <span class="stat-value">2</span>
+        <span class="stat-label">Đang giao</span>
+      </article>
+      <article class="stat-card">
+        <span class="stat-value">1</span>
+        <span class="stat-label">Đã giao</span>
+      </article>
+    </section>
+
+    <main class="main-grid layout-form-right">
+      <section class="panel">
+        <div class="panel-header">
+          <h2 class="panel-title">Danh sách đơn vận chuyển</h2>
+          <p class="panel-desc">Tìm kiếm và lọc theo trạng thái</p>
+        </div>
+
+        <div class="toolbar">
+          <input class="form-control search-control" placeholder="Tìm mã đơn, người nhận...">
+          <div class="filter-tabs">
+            <button class="filter-btn active">Tất cả</button>
+            <button class="filter-btn">Chờ lấy</button>
+            <button class="filter-btn">Đang giao</button>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Mã đơn</th>
+                <th>Người nhận</th>
+                <th>Địa điểm</th>
+                <th>Trạng thái</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>SH001</td>
+                <td>Nguyễn Văn A</td>
+                <td>Hà Nội</td>
+                <td><span class="status-badge neutral">Chờ lấy</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2 class="panel-title">Tạo đơn mới</h2>
+          <p class="panel-desc">Nhập thông tin vận chuyển</p>
+        </div>
+
+        <form class="crud-form">
+          <div class="form-group">
+            <label>Người nhận</label>
+            <input class="form-control" placeholder="Nhập tên người nhận">
+          </div>
+
+          <div class="form-group">
+            <label>Địa điểm</label>
+            <select class="form-control">
+              <option>Hà Nội</option>
+              <option>Đà Nẵng</option>
+            </select>
+          </div>
+
+          <button class="btn btn-dark btn-block" type="button">Thêm đơn</button>
+        </form>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

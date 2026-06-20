@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mẫu toolbar + table</title>
+  <link rel="stylesheet" href="../css/exam-crud.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-brand">Thuy Loi University</div>
+    <nav class="topbar-nav">
+      <a class="active" href="#">Home</a>
+      <a href="#">Store Management</a>
+    </nav>
+    <form class="topbar-search">
+      <input placeholder="Search">
+      <button class="btn btn-light" type="button">SEARCH</button>
+    </form>
+  </header>
+
+  <div class="app-shell">
+    <main class="main-grid layout-toolbar-table">
+      <section class="panel">
+        <div class="toolbar">
+          <div class="toolbar-left">
+            <button class="btn btn-primary">ADD</button>
+            <button class="btn btn-light">EXPORT</button>
+          </div>
+
+          <div class="toolbar-right">
+            <input class="form-control search-control" placeholder="Search for ID">
+            <button class="btn btn-light">Search</button>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Action</th>
+                <th>STT</th>
+                <th>Manager</th>
+                <th>Address</th>
+                <th>Last Update</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="action-group">
+                    <button class="icon-btn view">Xem</button>
+                    <button class="icon-btn edit">Sửa</button>
+                    <button class="icon-btn delete">Xóa</button>
+                  </div>
+                </td>
+                <td>1</td>
+                <td>Chase Hammond</td>
+                <td>2429 Timbercrest Road</td>
+                <td>15 February 2024 9:57</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

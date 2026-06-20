@@ -1,0 +1,595 @@
+﻿/* ========================================================= 01. VARIABLES + RESET ========================================================= */
+:root {
+  --bg: #f4f6f8;
+  --surface: #ffffff;
+  --surface-soft: #f8fafc;
+  --text: #111827;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --border-strong: #d1d5db;
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --dark: #1f2937;
+  --danger: #dc2626;
+  --warning: #b45309;
+  --success: #15803d;
+  --info: #0369a1;
+  --radius: 10px;
+  --shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+a {
+  color: inherit;
+}
+/* ========================================================= 02. PAGE WRAPPER ============================================================= */
+.app-shell {
+  width: min(1200px, calc(100% - 40px));
+  margin: 24px auto;
+}
+.page-title {
+  margin: 0;
+  font-size: 32px;
+  line-height: 1.2;
+}
+.page-subtitle {
+  margin: 8px 0 0;
+  color: var(--muted);
+}
+/* ========================================================= 03. HEADER / NAV ============================================================== */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 22px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.app-header.primary {
+  color: #ffffff;
+  background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+  border: 0;
+}
+.app-header.primary .page-subtitle {
+  color: rgba(255, 255, 255, 0.85);
+}
+.brand-block {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.brand-logo {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border: 2px solid currentColor;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 14px;
+}
+.brand-title {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.25;
+}
+.brand-desc {
+  margin: 4px 0 0;
+  color: var(--muted);
+}
+.nav-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+.nav-pills a {
+  padding: 10px 14px;
+  color: var(--muted);
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: 700;
+}
+.nav-pills a.active {
+  color: var(--text);
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+}
+/* ========================================================= 04. STORE-STYLE TOPBAR ======================================================= */
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  min-height: 68px;
+  padding: 0 20px;
+  background: #2d2d2d;
+  color: #ffffff;
+  border-top: 2px solid #b91c1c;
+}
+.topbar-brand {
+  margin-right: auto;
+  font-weight: 700;
+}
+.topbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+.topbar-nav a {
+  color: #d1d5db;
+  text-decoration: none;
+  font-weight: 700;
+}
+.topbar-nav a.active {
+  color: #ffffff;
+}
+.topbar-search {
+  display: flex;
+  gap: 8px;
+}
+.topbar-search input {
+  width: 240px;
+  height: 40px;
+  padding: 0 12px;
+  border: 0;
+}
+/* ========================================================= 05. STATISTICS ============================================================== */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 20px;
+}
+.stat-card {
+  min-height: 96px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.stat-value {
+  font-size: 30px;
+  font-weight: 800;
+}
+.stat-label {
+  color: var(--muted);
+  font-size: 14px;
+  text-transform: uppercase;
+}
+/* ========================================================= 06. LAYOUTS ================================================================== */
+.main-grid {
+  display: grid;
+  gap: 22px;
+  margin-top: 22px;
+}
+.layout-two {
+  grid-template-columns: 0.9fr 1.4fr;
+  align-items: start;
+}
+.layout-form-right {
+  grid-template-columns: 1.7fr 0.85fr;
+  align-items: start;
+}
+.layout-vertical {
+  grid-template-columns: 1fr;
+}
+.layout-toolbar-table {
+  grid-template-columns: 1fr;
+}
+/* ========================================================= 07. PANEL / CARD ============================================================= */
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.panel-header {
+  padding: 18px 22px;
+  background: var(--surface-soft);
+  border-bottom: 1px solid var(--border);
+}
+.panel-title {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.3;
+}
+.panel-desc {
+  margin: 4px 0 0;
+  color: var(--muted);
+}
+.panel-body {
+  padding: 22px;
+}
+/* ========================================================= 08. FORM ===================================================================== */
+.crud-form {
+  padding: 22px;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+.form-group {
+  margin-bottom: 16px;
+}
+.form-grid .form-group {
+  margin-bottom: 0;
+}
+.form-span-2 {
+  grid-column: 1 / -1;
+}
+.form-label,
+.form-group label,
+.field-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+.form-control {
+  width: 100%;
+  height: 46px;
+  padding: 0 12px;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  outline: none;
+}
+textarea.form-control {
+  min-height: 92px;
+  padding-top: 10px;
+  resize: vertical;
+}
+.form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+.choice-row {
+  min-height: 46px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+}
+.choice-row label {
+  margin: 0;
+  font-weight: 400;
+}
+.choice-row input {
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+}
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+.form-error {
+  min-height: 18px;
+  display: block;
+  margin-top: 5px;
+  color: var(--danger);
+  font-size: 13px;
+}
+/* ========================================================= 09. BUTTONS ================================================================== */
+.btn,
+.filter-btn,
+.icon-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  text-decoration: none;
+}
+.btn {
+  min-height: 44px;
+  padding: 0 18px;
+}
+.btn-block {
+  width: 100%;
+}
+.btn-primary {
+  color: #ffffff;
+  background: var(--primary);
+  border-color: var(--primary);
+}
+.btn-primary:hover {
+  background: var(--primary-dark);
+}
+.btn-dark {
+  color: #ffffff;
+  background: var(--dark);
+  border-color: var(--dark);
+}
+.btn-light {
+  color: var(--text);
+  background: var(--surface);
+  border-color: var(--border-strong);
+}
+.btn-danger {
+  color: #ffffff;
+  background: var(--danger);
+  border-color: var(--danger);
+}
+/* ========================================================= 10. TOOLBAR / SEARCH / FILTER =============================================== */
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 22px;
+  border-bottom: 1px solid var(--border);
+}
+.toolbar-left,
+.toolbar-right {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+.search-control {
+  width: min(320px, 100%);
+}
+.filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.filter-btn {
+  min-height: 38px;
+  padding: 0 14px;
+  color: var(--text);
+  background: var(--surface);
+  border-color: var(--border-strong);
+}
+.filter-btn.active {
+  color: #ffffff;
+  background: var(--dark);
+  border-color: var(--dark);
+}
+/* ========================================================= 11. TABLE ==================================================================== */
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+.data-table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+}
+.data-table th,
+.data-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  vertical-align: middle;
+}
+.data-table th {
+  background: var(--surface-soft);
+  color: var(--muted);
+  font-size: 13px;
+  text-transform: uppercase;
+}
+.data-table tbody tr:hover {
+  background: #f9fafb;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.empty-cell {
+  padding: 28px 16px;
+  color: var(--muted);
+  text-align: center;
+}
+.action-group {
+  display: flex;
+  gap: 6px;
+}
+.icon-btn {
+  min-width: 34px;
+  min-height: 34px;
+  padding: 0 10px;
+  color: var(--text);
+  background: var(--surface-soft);
+  border-color: var(--border);
+  font-size: 14px;
+}
+.icon-btn.view {
+  color: var(--info);
+}
+.icon-btn.edit {
+  color: var(--warning);
+}
+.icon-btn.delete {
+  color: var(--danger);
+}
+/* ========================================================= 12. BADGE / STATUS =========================================================== */
+.badge,
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+.badge.success,
+.status-badge.success {
+  color: var(--success);
+  background: #dcfce7;
+}
+.badge.warning,
+.status-badge.warning {
+  color: var(--warning);
+  background: #fef3c7;
+}
+.badge.danger,
+.status-badge.danger {
+  color: var(--danger);
+  background: #fee2e2;
+}
+.badge.info,
+.status-badge.info {
+  color: var(--info);
+  background: #e0f2fe;
+}
+.badge.neutral,
+.status-badge.neutral {
+  color: var(--text);
+  background: #f3f4f6;
+}
+/* ========================================================= 13. TASK LIST CARD =========================================================== */
+.list-stack {
+  display: grid;
+  gap: 14px;
+}
+.list-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 14px;
+  align-items: center;
+  padding: 18px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.list-card-content {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(120px, 1fr));
+  gap: 12px;
+}
+.list-label {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+}
+.list-value {
+  display: block;
+  margin-top: 2px;
+  font-weight: 700;
+}
+/* ========================================================= 14. POP-UP / MODAL =========================================================== */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(15, 23, 42, 0.48);
+}
+.modal-backdrop.show {
+  display: flex;
+}
+.modal-dialog {
+  width: min(720px, 100%);
+  max-height: calc(100vh - 48px);
+  overflow: auto;
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.25);
+}
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 22px;
+  border-bottom: 1px solid var(--border);
+}
+.modal-title {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.25;
+}
+.modal-desc {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+.modal-close {
+  width: 36px;
+  height: 36px;
+  flex: 0 0 auto;
+  border: 0;
+  border-radius: 50%;
+  background: var(--surface-soft);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 22px;
+  line-height: 1;
+}
+.modal-body {
+  padding: 22px;
+}
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 18px 22px;
+  border-top: 1px solid var(--border);
+}
+/* ========================================================= 15. FOOTER =================================================================== */
+.app-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 22px;
+  padding: 16px 20px;
+  color: var(--muted);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.app-footer strong {
+  color: var(--text);
+}
+.student-line {
+  margin-left: auto;
+}
+/* ========================================================= 16. THEME COLORS ============================================================= */
+.theme-blue {
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+}
+.theme-green {
+  --primary: #16a34a;
+  --primary-dark: #15803d;
+}
+.theme-dark {
+  --primary: #111827;
+  --primary-dark: #000000;
+}

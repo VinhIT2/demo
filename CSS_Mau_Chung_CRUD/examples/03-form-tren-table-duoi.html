@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mẫu form trên, bảng dưới</title>
+  <link rel="stylesheet" href="../css/exam-crud.css">
+</head>
+<body>
+  <div class="app-shell theme-dark">
+    <header class="app-header">
+      <div class="brand-block">
+        <div class="brand-logo">TLU</div>
+        <div>
+          <h1 class="brand-title">Quản lý hoạt động ngoại khóa</h1>
+          <p class="brand-desc">Đăng ký và theo dõi hoạt động sinh viên</p>
+        </div>
+      </div>
+    </header>
+
+    <section class="stats-grid">
+      <article class="stat-card">
+        <span class="stat-value">5</span>
+        <span class="stat-label">Tổng hoạt động</span>
+      </article>
+      <article class="stat-card">
+        <span class="stat-value">2</span>
+        <span class="stat-label">Sắp diễn ra</span>
+      </article>
+      <article class="stat-card">
+        <span class="stat-value">1</span>
+        <span class="stat-label">Hoàn thành</span>
+      </article>
+    </section>
+
+    <main class="main-grid layout-vertical">
+      <section class="panel">
+        <div class="panel-header">
+          <h2 class="panel-title">Đăng ký hoạt động mới</h2>
+          <p class="panel-desc">Nhập thông tin hoạt động</p>
+        </div>
+
+        <form class="crud-form form-grid">
+          <div class="form-group">
+            <label>Tên hoạt động</label>
+            <input class="form-control" placeholder="Nhập tên hoạt động">
+          </div>
+
+          <div class="form-group">
+            <label>Câu lạc bộ</label>
+            <select class="form-control">
+              <option>CLB IT</option>
+              <option>CLB Thể thao</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <span class="field-label">Hình thức</span>
+            <div class="choice-row">
+              <label><input type="radio" name="method" checked> Trực tiếp</label>
+              <label><input type="radio" name="method"> Trực tuyến</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Trạng thái</label>
+            <select class="form-control">
+              <option>Sắp diễn ra</option>
+              <option>Hoàn thành</option>
+            </select>
+          </div>
+
+          <div class="form-actions form-span-2">
+            <button class="btn btn-dark" type="button">Thêm hoạt động</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2 class="panel-title">Danh sách hoạt động</h2>
+          <p class="panel-desc">Tìm kiếm và lọc theo trạng thái</p>
+        </div>
+
+        <div class="toolbar">
+          <input class="form-control search-control" placeholder="Tìm tên hoạt động, CLB...">
+          <div class="filter-tabs">
+            <button class="filter-btn active">Tất cả</button>
+            <button class="filter-btn">Sắp diễn ra</button>
+            <button class="filter-btn">Hoàn thành</button>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Hoạt động</th>
+                <th>CLB</th>
+                <th>Hình thức</th>
+                <th>Trạng thái</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Hackathon 2026</td>
+                <td>CLB IT</td>
+                <td>Trực tiếp</td>
+                <td><span class="status-badge neutral">Sắp diễn ra</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

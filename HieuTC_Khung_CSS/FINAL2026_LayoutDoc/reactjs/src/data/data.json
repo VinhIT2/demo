@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Hackathon 2026",
+    "club": "CLB IT",
+    "method": "Trực tiếp",
+    "status": "Sắp diễn ra"
+  },
+  {
+    "id": 2,
+    "name": "Workshop UI/UX",
+    "club": "CLB IT",
+    "method": "Trực tuyến",
+    "status": "Đang diễn ra"
+  },
+  {
+    "id": 3,
+    "name": "Ngày hội thể thao",
+    "club": "CLB Thể thao",
+    "method": "Trực tiếp",
+    "status": "Hoàn thành"
+  },
+  {
+    "id": 4,
+    "name": "Triển lãm tranh",
+    "club": "CLB Nghệ thuật",
+    "method": "Trực tiếp",
+    "status": "Sắp diễn ra"
+  },
+  {
+    "id": 5,
+    "name": "Ngày hội tình nguyện",
+    "club": "CLB Tình nguyện",
+    "method": "Trực tiếp",
+    "status": "Đã hủy"
+  }
+]

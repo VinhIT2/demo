@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mẫu task list card</title>
+  <link rel="stylesheet" href="../css/exam-crud.css">
+</head>
+<body>
+  <div class="app-shell theme-blue">
+    <header class="app-header">
+      <h1 class="page-title">Task List</h1>
+      <button class="btn btn-primary">+ Add Task</button>
+    </header>
+
+    <main class="main-grid layout-vertical">
+      <section class="list-stack">
+        <article class="list-card">
+          <div class="list-card-content">
+            <div>
+              <span class="list-label">Task</span>
+              <span class="list-value">Go to gym</span>
+            </div>
+            <div>
+              <span class="list-label">Priority</span>
+              <span class="list-value"><span class="badge danger">High</span></span>
+            </div>
+            <div>
+              <span class="list-label">Status</span>
+              <span class="list-value"><span class="badge neutral">To Do</span></span>
+            </div>
+          </div>
+
+          <div class="action-group">
+            <button class="icon-btn edit">Sửa</button>
+            <button class="icon-btn delete">Xóa</button>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

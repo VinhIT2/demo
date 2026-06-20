@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mẫu form popup</title>
+  <link rel="stylesheet" href="../css/exam-crud.css">
+</head>
+<body>
+  <div class="app-shell theme-blue">
+    <header class="app-header">
+      <h1 class="page-title">Task List</h1>
+      <button id="openModalBtn" class="btn btn-primary" type="button">+ Add Task</button>
+    </header>
+
+    <main class="main-grid layout-vertical">
+      <section class="list-stack">
+        <article class="list-card">
+          <div class="list-card-content">
+            <div>
+              <span class="list-label">Task</span>
+              <span class="list-value">Go to gym</span>
+            </div>
+            <div>
+              <span class="list-label">Priority</span>
+              <span class="list-value"><span class="badge danger">High</span></span>
+            </div>
+            <div>
+              <span class="list-label">Status</span>
+              <span class="list-value"><span class="badge neutral">To Do</span></span>
+            </div>
+          </div>
+
+          <div class="action-group">
+            <button class="icon-btn edit" type="button">Sửa</button>
+            <button class="icon-btn delete" type="button">Xóa</button>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <div id="taskModal" class="modal-backdrop">
+    <section class="modal-dialog">
+      <header class="modal-header">
+        <div>
+          <h2 class="modal-title">Add Task</h2>
+          <p class="modal-desc">Nhập thông tin task mới</p>
+        </div>
+        <button id="closeModalBtn" class="modal-close" type="button">×</button>
+      </header>
+
+      <form>
+        <div class="modal-body">
+          <div class="form-group">
+            <label>Task</label>
+            <input class="form-control" placeholder="Type your task here...">
+          </div>
+
+          <div class="form-group">
+            <span class="field-label">Priority</span>
+            <div class="choice-row">
+              <label><input type="radio" name="priority" value="High"> High</label>
+              <label><input type="radio" name="priority" value="Medium"> Medium</label>
+              <label><input type="radio" name="priority" value="Low" checked> Low</label>
+            </div>
+          </div>
+        </div>
+
+        <footer class="modal-footer">
+          <button id="cancelModalBtn" class="btn btn-light" type="button">Hủy</button>
+          <button class="btn btn-primary" type="submit">Add</button>
+        </footer>
+      </form>
+    </section>
+  </div>
+
+  <script>
+    const modal = document.querySelector("#taskModal");
+    const openModalBtn = document.querySelector("#openModalBtn");
+    const closeModalBtn = document.querySelector("#closeModalBtn");
+    const cancelModalBtn = document.querySelector("#cancelModalBtn");
+
+    function openModal() {
+      modal.classList.add("show");
+    }
+
+    function closeModal() {
+      modal.classList.remove("show");
+    }
+
+    openModalBtn.addEventListener("click", openModal);
+    closeModalBtn.addEventListener("click", closeModal);
+    cancelModalBtn.addEventListener("click", closeModal);
+  </script>
+</body>
+</html>
